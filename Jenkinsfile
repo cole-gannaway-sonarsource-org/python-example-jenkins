@@ -3,7 +3,7 @@ node {
     checkout scm
   }
   stage('SonarQube Analysis') {
-    def mvn = tool 'mvn';
+    def mvn = tool 'sonar-scanner-cli';
     withSonarQubeEnv() {
         sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=cole-gannaway-sonarsource-org_python-example-jenkins_AY4awoK1E5YwdsA4sndN"
     }

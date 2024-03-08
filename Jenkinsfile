@@ -1,8 +1,3 @@
-stage('Test') {
-  steps {
-    sh 'echo "Tests"'
-  }      
-}
 stage('SCM') {
   checkout scm
 }

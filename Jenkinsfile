@@ -4,7 +4,7 @@ stage('SCM') {
 stage('SonarQube Analysis') {
   def scannerHome = tool 'sonar-scanner-cli';
   withSonarQubeEnv() {
-    sh "${scannerHome}/bin/sonar-scanner"
+    sh "${scannerHome}/bin/sonar-scanner -Dsonar.sources=. -Dsonar.host.url=http://localhost:9000"
   }
 }
 stage("Quality Gate") {

@@ -1,5 +1,6 @@
 stage('SCM') {
   checkout scm
+  echo 'SCM would be running'
 }
 stage('SonarQube Analysis') {
   // def scannerHome = tool 'sonar-scanner-cli';

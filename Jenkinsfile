@@ -2,9 +2,9 @@ stage('SCM') {
   checkout scm
 }
 stage('SonarQube Analysis') {
-  def mvn = tool 'mvn';
+  def scannerHome = tool 'sonar-scanner-cli';
   withSonarQubeEnv() {
-    sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=jenkinstest"
+    sh "${scannerHome}/bin/sonar-scanner"
   }
 }
 stage("Quality Gate") {

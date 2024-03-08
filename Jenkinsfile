@@ -1,6 +1,8 @@
 stage('SCM') {
   steps {
+    echo "Checking out code from SCM..."
     checkout scm
+    echo "Checking out succesful"
   }
 }
 stage('SonarQube Analysis') {

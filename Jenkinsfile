@@ -5,7 +5,7 @@ node {
   stage('SonarQube Analysis') {
     def scannerHome = tool 'SonarScanner';
     withSonarQubeEnv() {
-      sh "${scannerHome}/sonar-scanner-cli-5.0.1.3006-linux/bin/sonar-scanner"
+      sh "ls ${scannerHome} && echo 'Running the SonarScanner' && ${scannerHome}/sonar-scanner-cli-5.0.1.3006-linux/bin/sonar-scanner"
     }
   }
   stage("Quality Gate") {

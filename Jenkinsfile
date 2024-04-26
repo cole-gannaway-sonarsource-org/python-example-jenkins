@@ -3,9 +3,9 @@ node {
     checkout scm
   }
   stage('SonarQube Analysis') {
-    def scannerHome = tool 'SonarScannerMac';
+    def scannerHome = tool 'SonarScanner';
     withSonarQubeEnv() {
-      sh "${scannerHome}/sonar-scanner-5.0.1.3006-macosx/bin/sonar-scanner"
+      sh "${scannerHome}/sonar-scanner-5.0.1.3006-linux/bin/sonar-scanner"
     }
   }
   stage("Quality Gate") {

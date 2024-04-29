@@ -1,4 +1,7 @@
 node {
+  triggers {
+    pollSCM('H/5 * * * *')
+  }
   stage('SCM') {
     checkout scm
   }
